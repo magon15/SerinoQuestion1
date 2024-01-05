@@ -15,7 +15,7 @@ class MainActivity : ComponentActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_price_list)
 
         val items = arrayOf("Toothpaste","Toothbrush","Mouthwash", "Hand Soap", "Candies", "Cotton", "Body Wash", "Floss", "Electric Toothbrush", "Cologne")
-        val prices = (0..items.size).map { (10..30).random() }
+        val prices = (items.indices).map { (10..30).random() }
         binding.recyclerPriceList.apply {
             adapter = PriceListAdapter(
                 items,
